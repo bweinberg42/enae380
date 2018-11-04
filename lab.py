@@ -24,7 +24,15 @@ def apply_phys_limit(d):
 
     """
 
-    pass
+    dist = d_sensor.read_mm()
+
+    while (dist > d):
+        pig.forward()
+        dist = d_sensor.read_mm()
+
+    pig.stop()
+    return(dist)
+
 
 
 
@@ -41,6 +49,14 @@ def apply_time_limit(dt, speed):
         the speed (dps) at which to move forward
         
     """
+
+    pig.set_speed(speed)
+
+    pig.forward()
+
+    time.sleep(dt)
+
+    pig.stop()
 
     pass
 
