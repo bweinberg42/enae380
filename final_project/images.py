@@ -11,7 +11,7 @@ camera = PiCamera()
 index = 3;
 left = False
 
-def main:
+def main():
 	take_image()
 	circles = find_circles()
 	left, index = next_move(circles, index)
@@ -64,3 +64,6 @@ def move(left):
 		bot.orbit(90)
 
 	pass
+
+if __name__ == "__main__":
+	main()
