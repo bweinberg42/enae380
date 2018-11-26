@@ -16,17 +16,17 @@ def blink(color):
 	bot.close_eyes()
 
 
-def wink_left(color):
-	bot.set_eye_color(color)
-	bot.open_left_eye()
-	time.sleep(0.5)
-	bot.close_left_eye()
-
-
-def wink_right(color):
-	bot.set_eye_color(color)
-	bot.open_right_eye()
-	time.sleep(0.5)
-	bot.close_right_eye()
+def wink(color, left):
+	if left:
+		bot.set_eye_color(color)
+		bot.open_left_eye()
+		time.sleep(0.5)
+		bot.close_left_eye()
+	
+	else:
+		bot.set_eye_color(color)
+		bot.open_right_eye()
+		time.sleep(0.5)
+		bot.close_right_eye()
 
 
