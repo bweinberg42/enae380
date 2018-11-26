@@ -17,6 +17,12 @@ if left==True:
     #If the first move is to turn left we are in the position S1:
     
 #Orient yourself - somehow. Assuming starting after the turn left facing the first opening
-    pig.drive_inches
+    pig.drive_inches(10,blocking=True)
+    pig.orbit(-90,0,blocking=True)
+    pig.drive_inches(8,blocking=True)
+    pig.orbit(90,0,blocking=True)
+    
+
+
 
 else:
