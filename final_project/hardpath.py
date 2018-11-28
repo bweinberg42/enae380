@@ -14,11 +14,9 @@ pig=easy.EasyGoPiGo3
 d_sensor = pig.init_distance_sensor()
 servo = pig.init_servo() #Check this init
 
-
-
 left=True
 
-if left==True:
+if left:
     #If the first move is to turn left we are in the position S1:
     
     #Orient yourself - somehow. Assuming starting after the turn left facing the first opening
@@ -54,9 +52,7 @@ if left==True:
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
     
-    lights.blink('green')
-    lights.blink('green')
-    lights.blink('green')
+    3 * lights.blink('green')
 
 else:
     
@@ -91,32 +87,5 @@ else:
     #Drive forward 8 inches
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
-    
-    lights.blink('green')
-    lights.blink('green')
-    lights.blink('green')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    3 * lights.blink('green')
