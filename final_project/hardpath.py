@@ -7,18 +7,21 @@ Created on Mon Nov 26 15:29:41 2018
 """
 
 import easygopigo3 as easy
-import time
+import lights.py as lights
+
 
 pig=easy.EasyGoPiGo3
 d_sensor = pig.init_distance_sensor()
 servo = pig.init_servo() #Check this init
+
+
 
 left=True
 
 if left==True:
     #If the first move is to turn left we are in the position S1:
     
-#Orient yourself - somehow. Assuming starting after the turn left facing the first opening
+    #Orient yourself - somehow. Assuming starting after the turn left facing the first opening
     #Drive forward 10 inches
     pig.drive_inches(10,blocking=True)
     #Turn left 90 degrees
@@ -50,6 +53,10 @@ if left==True:
     #Drive forward 8 inches
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
+    
+    lights.blink('green')
+    lights.blink('green')
+    lights.blink('green')
 
 else:
     
@@ -85,7 +92,9 @@ else:
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
     
-    
+    lights.blink('green')
+    lights.blink('green')
+    lights.blink('green')
     
     
     
