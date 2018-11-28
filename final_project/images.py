@@ -6,7 +6,7 @@ import lights as l
 
 bot = easy.EasyGoPiGo3()
 servo = bot.init_servo()
-camera = PiCamera()
+camera = cam.PiCamera()
 
 index = 3;
 left = False
