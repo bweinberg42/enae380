@@ -52,7 +52,8 @@ if left:
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
     
-    3 * lights.blink('green')
+	for _ in range(3):
+    	lights.blink('green')
 
 else:
     
@@ -87,5 +88,6 @@ else:
     #Drive forward 8 inches
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
-
-    3 * lights.blink('green')
+ 
+	for _ in range(3):
+    	lights.blink('green')
