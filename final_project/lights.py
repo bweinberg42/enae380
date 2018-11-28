@@ -10,6 +10,7 @@ bot = easy.EasyGoPiGo3()
 
 
 def blink(color):
+	color = get_color(color)
 	bot.set_eye_color(color)
 	bot.open_eyes()
 	time.sleep(0.5)
@@ -17,6 +18,8 @@ def blink(color):
 
 
 def wink(color, left):
+	color = get_color(color)
+
 	if left:
 		bot.set_eye_color(color)
 		bot.open_left_eye()
@@ -29,4 +32,15 @@ def wink(color, left):
 		time.sleep(0.5)
 		bot.close_right_eye()
 
+def get_color(color):
+	if color == 'white':
+		return (255, 255, 255)
 
+	elif color == 'red'
+		return (255, 0, 0)
+
+	elif color == 'blue'
+		return (0, 0, 255)
+
+	elif color == 'green'
+		return (0, 128, 0)
