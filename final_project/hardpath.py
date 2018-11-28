@@ -88,6 +88,15 @@ else:
     #Drive forward 8 inches
     pig.drive_inches(12,blocking=True)
     #We out the fucking maze bitches
+    #Blaire's edits
+<<<<<<< Updated upstream
  
 	for _ in range(3):
     	lights.blink('green')
+=======
+    
+    lights.blink('green')
+    lights.blink('green')
+    lights.blink('green')
+    
+>>>>>>> Stashed changes
