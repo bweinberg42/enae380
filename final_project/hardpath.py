@@ -7,10 +7,10 @@ Created on Mon Nov 26 15:29:41 2018
 """
 
 import easygopigo3 as easy
-import lights.py as lights
+import lights
 
 
-pig=easy.EasyGoPiGo3
+pig = easy.EasyGoPiGo3()
 d_sensor = pig.init_distance_sensor()
 servo = pig.init_servo() #Check this init
 
