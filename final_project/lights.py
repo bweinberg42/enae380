@@ -36,11 +36,11 @@ def get_color(color):
 	if color == 'white':
 		return (255, 255, 255)
 
-	elif color == 'red'
+        elif color == 'red':
 		return (255, 0, 0)
 
-	elif color == 'blue'
+        elif color == 'blue':
 		return (0, 0, 255)
 
-	elif color == 'green'
+        elif color == 'green':
 		return (0, 128, 0)
