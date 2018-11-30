@@ -18,11 +18,9 @@ def main():
 	move(left)
 	
 def take_image():
-	#https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/6
-	camera.start_preview()
 	sleep(5)
-	camera.capture('/home/pi/Desktop/enae380/final_project/image.png')
-	camera.stop_preview()
+	camera.capture('image.png')
+	camera.close()
 
 	pass
 
