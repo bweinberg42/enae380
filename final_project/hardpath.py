@@ -14,7 +14,7 @@ import orient
 pig = easy.EasyGoPiGo3()
 d_sensor = pig.init_distance_sensor()
 
-#orient.orient_long()
+orient.orient_long()
 pig.drive_inches(-12,blocking=True)
 left = orient.orient_path()
 
