@@ -15,7 +15,7 @@ def blink(color):
 	bot.open_eyes()
 	time.sleep(0.5)
 	bot.close_eyes()
-
+	time.sleep(0.5)
 
 def wink(color, left):
 	color = get_color(color)
@@ -25,12 +25,14 @@ def wink(color, left):
 		bot.open_left_eye()
 		time.sleep(0.5)
 		bot.close_left_eye()
+	        time.sleep(0.5)
 	
 	else:
 		bot.set_eye_color(color)
 		bot.open_right_eye()
 		time.sleep(0.5)
 		bot.close_right_eye()
+	        time.sleep(0.5)
 
 def get_color(color):
 	if color == 'white':
