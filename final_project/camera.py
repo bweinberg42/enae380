@@ -15,7 +15,7 @@ def check_cam():
 img = cv2.imread('image.png',0)
 img = cv2.medianBlur(img,5)
 
-circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 200, param1=50, param2=30, minRadius=0, maxRadius=0)
+circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 100, param1=50, param2=70, minRadius=0, maxRadius=0)
 
 circles = np.uint16(np.around(circles))
 for i in circles[0,:]:
