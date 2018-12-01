@@ -52,7 +52,9 @@ def orient_path():
     left = True 
     
     bot.turn_degrees(-90)
-    if d_sensor.read_inches < 1.8:
+    dist = d_sensor.read_mm()
+
+    if dist < 100:
         bot.turn_degrees(180)
         left = False
     
