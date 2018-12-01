@@ -11,13 +11,6 @@ def check_cam():
 	camera.capture('image.png')
 	camera.close()
 
-
-img = cv2.imread('image.png',0)
-img = cv2.medianBlur(img,5)
-
-circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 100, param1=50, param2=70, minRadius=0, maxRadius=0)
-
-circles = np.uint16(np.around(circles))
 for i in circles[0,:]:
 	# draw the outer circle
 	cv2.circle(img,(i[0],i[1]),i[2],(0,255,0),2)
