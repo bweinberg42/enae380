@@ -32,6 +32,7 @@ def find_circles():
     circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 100, param1=50, param2=70, minRadius=0, maxRadius=0)
 
     circles = np.uint16(np.around(circles))
+    print(circles)
 
     return circles[0, -1]
 
