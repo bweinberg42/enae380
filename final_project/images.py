@@ -20,7 +20,7 @@ def main():
 	
 def take_image():
 	sleep(5)
-	camera.capture('image.png')
+	camera.capture('image_6.png')
 	camera.close()
 
 	pass
