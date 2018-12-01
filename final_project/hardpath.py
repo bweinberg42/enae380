@@ -8,13 +8,17 @@ Created on Mon Nov 26 15:29:41 2018
 
 import easygopigo3 as easy
 import lights
+import orient
 
 
 pig = easy.EasyGoPiGo3()
 d_sensor = pig.init_distance_sensor()
-servo = pig.init_servo() #Check this init
 
-left=True
+orient.orient_long()
+pig.drive_inches(12,blocking=True)
+left = orient.orient_path()
+
+
 
 if left:
     #If the first move is to turn left we are in the position S1:

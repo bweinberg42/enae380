@@ -1,9 +1,10 @@
 import easygopigo3 as easy
 import numpy as np
 
+bot = easy.EasyGoPiGo3()
+d_sensor = bot.init_distance_sensor()
+    
 def orient_long():
-    bot = easy.EasyGoPiGo3()
-    d_sensor = bot.init_distance_sensor()
 
     distance = np.zeros(6)
 
@@ -19,8 +20,6 @@ def orient_long():
     pass
 
 def orient_short():
-    bot = easy.EasyGoPiGo3()
-    d_sensor = bot.init_distance_sensor()
 
     distance = np.zeros(6)
 
@@ -35,3 +34,13 @@ def orient_short():
 
     pass
 
+def orient_path():
+    
+    bot.turn_degrees(90)
+    if d_sensor.read_mm < 50.8:
+        bot.turn_degrees(180)
+        left=True
+    
+    return left
+
+    
