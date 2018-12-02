@@ -6,58 +6,58 @@ bot = easy.EasyGoPiGo3()
 d_sensor = bot.init_distance_sensor()
 
 def orient():
-    distance = np.zeros(12)
+	distance = np.zeros(12)
 
-    for i in range(12):
-            sleep(0.5)
-	    distance[i] = d_sensor.read_mm()
-            bot.turn_degrees(30)
+	for i in range(12):
+		sleep(0.5)
+		distance[i] = d_sensor.read_mm()
+		bot.turn_degrees(30)
 
-    return distance
+	return distance
 
 def find_angle(dist):
-    if dist < 2:
-        angle = 30 * dist
- 
-    elif dist < 9:
-        angle = 30 * dist + 5
+	if dist < 2:
+		angle = 30 * dist
 
- 
-    else:
-        angle = 30 * dist + 10
+	elif dist < 9:
+		angle = 30 * dist + 5
 
-    return angle
+
+	else:
+		angle = 30 * dist + 10
+
+	return angle
 
 def orient_long():
-    distance = orient()
+	distance = orient()
 
-    dist = np.argmax(distance[:])
-    
-    angle = find_angle(dist)
-    bot.turn_degrees(angle)
+	dist = np.argmax(distance[:])
 
-    pass
+	angle = find_angle(dist)
+	bot.turn_degrees(angle)
+
+	pass
 
 def orient_short():
-    distance = orient()
+	distance = orient()
 
-    dist = np.argmin(distance[:])
+	dist = np.argmin(distance[:])
 
-    angle = find_angle(dist)
-    bot.turn_degrees(angle)
+	angle = find_angle(dist)
+	bot.turn_degrees(angle)
 
-    pass
+	pass
 
 def orient_path():
-    left = True 
-    
-    bot.turn_degrees(-90)
-    dist = d_sensor.read_mm()
+	left = True 
 
-    if dist < 100:
-        bot.turn_degrees(180)
-        left = False
-    
-    return left
+	bot.turn_degrees(-90)
+	dist = d_sensor.read_mm()
 
-    
+	if dist < 100:
+		bot.turn_degrees(180)
+		left = False
+
+	return left
+
+

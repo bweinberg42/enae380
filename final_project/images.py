@@ -18,6 +18,9 @@ def main():
     if circles > 2:
         for _ in range(index):
         	l.blink(red)
+		for _ in range(circles):
+			l.blink(blue)
+
     else:
         left, index = next_move(circles, index)
         move(left)
