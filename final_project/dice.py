@@ -10,21 +10,21 @@ servo = bot.init_servo()
 camera = cam.PiCamera()
 
 
-def main():
-    index = 0;
+def main(index):
     take_image()
     circles = find_circles()
     
+    print('main index', index)
     if circles > 2:
         for _ in range(index):
-        	l.blink(red)
-		for _ in range(circles):
-			l.blink(blue)
+        	l.blink('red')
+	for _ in range(circles):
+		l.blink('blue')
 
     else:
         left, index = next_move(circles, index)
         move(left)
-        main()
+        main(index)
     
 
 def take_image():
@@ -47,11 +47,11 @@ def find_circles():
 def next_move(circles, index):
 	if circles == 1:
 		left = True
-		index -= index
+		index = index - 1
 
 	elif circles == 2:
 		left = False
-		index += index
+		index = index + 1
 	
 	else:
 		left = False
@@ -59,6 +59,7 @@ def next_move(circles, index):
 		    l.blink(red)
 
         print(left)
+        print('loop index', index)
 	return left, index
 
 def move(left):
@@ -66,15 +67,18 @@ def move(left):
 
 	if left:
 		bot.turn_degrees(90)
-		bot.drive_inches(14)
+		bot.drive_inches(14.75)
 		bot.turn_degrees(-90)
+                bot.drive_inches(-1)
 
 	else:
 		bot.turn_degrees(-90)
-		bot.drive_inches(14)
+		bot.drive_inches(14.75)
 		bot.turn_degrees(90)
+                bot.drive_inches(-1)
 
 	pass
 
 if __name__ == "__main__":
-	main()
+        index = 3;
+	main(index)

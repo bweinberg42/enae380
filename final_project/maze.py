@@ -12,7 +12,7 @@ pig = easy.EasyGoPiGo3()
 d_sensor = pig.init_distance_sensor()
 
 def main():
-	#orient.orient_long()
+	orient.orient_long()
 	pig.drive_inches(-12,blocking=True)
 	left = orient.orient_path()
 	maize(left)
@@ -20,21 +20,21 @@ def main():
 
 def maize(left):
 	if left:
-		drive(-13, -90)
+		drive(-12, -90)
 		drive(-12, 90)
-		drive(-12, 80)
-		drive(-13, -80)
-		drive(-11, 90)
-		drive(-11, -90)
+		drive(-12, 85)
+		drive(-11, -85)
+		drive(-12, 90)
+		drive(-15, -90)
 		drive(-20, 0)
     	
 	else:
 		drive(-24, -93)
-		drive(-12, -90)
+		drive(-11, -85)
 		drive(-36, -90)
 		drive(-12, 90)
 		drive(-12, -90)
-		drive(-13, 90)
+		drive(-12, 90)
 		drive(-20, 0)
 
 def end():

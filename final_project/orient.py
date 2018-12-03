@@ -16,25 +16,27 @@ def orient():
 	return distance
 
 def find_angle(dist):
-	if dist < 2:
-		angle = 30 * dist
+    angle = 32 * dist
 
-	elif dist < 9:
-		angle = 30 * dist + 5
-
-
-	else:
-		angle = 30 * dist + 10
-
-	return angle
+    return angle
 
 def orient_long():
 	distance = orient()
 
-	dist = np.argmax(distance[:])
+	dist = np.argmax(distance[:]) + 1
 
 	angle = find_angle(dist)
 	bot.turn_degrees(angle)
+
+
+	distance = d_sensor.read_mm()
+        print(distance)
+
+        if distance < 80:
+	    bot.turn_degrees(-90)
+
+        if distance > 340:
+                bot.turn_degrees(-15)
 
 	pass
 
